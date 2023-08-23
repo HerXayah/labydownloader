@@ -39,7 +39,6 @@ function checkIfFileExists(path) {
         console.error(err);
     }
 }
-
 async function downloadFile(url, targetFile) {
     s.message('Downloading LabyMod-4.jar');
     return await new Promise((resolve, reject) => {
