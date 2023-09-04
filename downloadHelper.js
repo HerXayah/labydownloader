@@ -1,3 +1,31 @@
+import https from 'https';
+
+export async function downloadFile(url, targetFile, s) {
+    s.message('Downloading LabyMod-4.jar');
+    return await new Promise((resolve, reject) => {
+      https
+        .get(url, (response) => {
+          if (response.statusCode === 200) {
+            const file = fs.createWriteStream(targetFile);
+            response.pipe(file);
+            file.on('finish', () => {
+              file.close(() => {
+                resolve(true);
+                s.message('Finished Downloaded LabyMod-4.jar');
+              });
+            });
+          } else {
+            reject(false);
+            s.message('Finished Downloaded LabyMod-4.jar');
+          }
+        })
+        .on('error', (error) => {
+          reject(error);
+          s.message('Error while downloading LabyMod-4.jar');
+        });
+    });
+  }
+
 export async function downloadLabyVersions() {
     let file = await new Promise((resolve, reject) => {
         // get manifest from url
