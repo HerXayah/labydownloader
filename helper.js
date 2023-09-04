@@ -29,5 +29,3 @@ async function determinOS() {
   }
   return OS;    
 }
-
-async function libHelper()
