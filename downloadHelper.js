@@ -1,3 +1,4 @@
+import fs from 'fs';
 import https from 'https';
 
 export async function downloadFile(url, targetFile, s) {

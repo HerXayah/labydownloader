@@ -22,8 +22,6 @@ for (let i = 0; i < labyProdChannel.length; i++) {
     }
 }
 
-console.log(labyVersions);
-
 let releaseChannel = await select({
     message: 'Which release channel do you want to download?',
     // only include snapshot and production
@@ -85,7 +83,7 @@ if (checkIfFileExists(downloadPath.toString() + "LabyMod-4.jar") == true) {
 
 s.message('LabyMod-4.jar does not exist');
 let downloadString = `https://laby-releases.s3.de.io.cloud.ovh.net/api/v1/download/labymod4/${releaseChannel}/${labyMCVersions.commitReference}.jar`;
-await downloadFile(downloadString, downloadPath.toString() + "LabyMod-4.jar");
+await downloadFile(downloadString, downloadPath.toString() + "LabyMod-4.jar", s);
 s.stop();
 
 outro('LabyMod Downloader complete!');
