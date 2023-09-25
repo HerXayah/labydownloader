@@ -19,6 +19,7 @@ async function fixDownloads(ManifestJSON) {
 async function determinOS() {
   let OS = "";
   if (process.platform === "win32") {
+    
     OS = "windows";
   } else if (process.platform === "linux") {
     OS = "linux";
