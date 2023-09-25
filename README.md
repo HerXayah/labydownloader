@@ -1,5 +1,5 @@
 # LabyDownloader
-Download a LabyMod-4 Jar to MultiMC/PolyMC or any directory to your PC
+Download a LabyMod-4 Jar to MultiMC/PolyMC or any directory to your PC :3
 
 ![](Files/pwsh_h5bq3tfk8t.gif)
 
