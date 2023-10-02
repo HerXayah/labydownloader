@@ -135,11 +135,9 @@ let themeChannel = await select({
 if (themeChannel == "1") {
     // remove vanilla-theme from assets object
     delete assets["vanilla-theme"];
-    message: ""
 } else if (themeChannel == "2") {
     // remove fancy-theme from assets object
     delete assets["fancy-theme"];
-    message: ""
 }
 
 let assetPath = downloadPath.toString() + "/.minecraft/labymod-neo/assets/";
