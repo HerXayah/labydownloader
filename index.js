@@ -48,7 +48,7 @@ let releaseChannel = await select({
     message: 'Which release channel do you want to download?',
     // only include snapshot and production
     options: JSON.parse(JSON.stringify(labyVersions)),
-    required: true,
+    required: true
 });
 
 let labyMCVersions = await downloadSpecificMC(releaseChannel);
@@ -91,7 +91,6 @@ function checkIfFileExists(path) {
     }
 }
 
-s.start('Checking if LabyMod-4.jar exists');
 // remove \\ and replace with /
 downloadPath = downloadPath.replace(/\\/g, "/");
 let labyDownloadPath = downloadPath.toString() + "/libraries/";
@@ -104,12 +103,11 @@ if (!fs.existsSync(labyDownloadPath)) {
 if (checkIfFileExists(labyDownloadPath.toString() + "LabyMod-4.jar") == true) {
     // delete file
     const shouldContinue = await confirm({
-        message: 'Do you want to backup the old LabyMod-4.jar?',
+        message: 'Do you want to backup the old LabyMod-4.jar?'
     });
     if (shouldContinue) {
         await fs.renameSync(labyDownloadPath.toString() + "LabyMod-4.jar", labyDownloadPath.toString() + "LabyMod-4.jar.old");
     }
-    s.message('Renamed LabyMod-4.jar to LabyMod-4.jar.old');
 }
 
 s.message('LabyMod-4.jar does not exist');
@@ -131,7 +129,7 @@ let themeChannel = await select({
             label: "vanilla"
         }
     ],
-    required: true,
+    required: true
 });
 
 if (themeChannel == "1") {
@@ -179,6 +177,6 @@ for (const asset in assets) {
         }
     }
 }
-s.stop();
+
 
 outro('LabyMod Downloader complete!');

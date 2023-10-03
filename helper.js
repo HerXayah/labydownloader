@@ -18,15 +18,19 @@ async function fixDownloads(ManifestJSON) {
 
 async function determinOS() {
   let OS = "";
-  if (process.platform === "win32") {
-    
-    OS = "windows";
-  } else if (process.platform === "linux") {
-    OS = "linux";
-  } else if (process.platform === "darwin") {
-    OS = "macos";
-  } else {
-    console.log("Unsupported OS");
+  switch(process.platform) {
+    case "win32":
+      OS = "win32";
+      break;
+    case "linux":
+      OS = "linux";
+      break;
+    case "darwin":
+      OS = "macos";
+      break;
+    default:
+      console.log("Unsupported OS");
   }
+
   return OS;    
 }
