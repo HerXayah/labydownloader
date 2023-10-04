@@ -15,22 +15,3 @@ async function fixDownloads(ManifestJSON) {
   });
   return ManifestJSON;
 }
-
-async function determinOS() {
-  let OS = "";
-  switch(process.platform) {
-    case "win32":
-      OS = "win32";
-      break;
-    case "linux":
-      OS = "linux";
-      break;
-    case "darwin":
-      OS = "macos";
-      break;
-    default:
-      console.log("Unsupported OS");
-  }
-
-  return OS;    
-}
