@@ -27,7 +27,7 @@ export async function downloadFile(url, targetFile, s) {
     });
   }
 
-  async function makeHttpRequest(url) {
+  export async function makeHttpRequest(url) {
     return new Promise((resolve, reject) => {
       https.get(url, (response) => {
         if (response.statusCode === 200) {
