@@ -9,7 +9,7 @@ import {
 } from './downloadHelper.js';
 import crypto from 'crypto';
 
-const Window = await Gluon.open('./Web/index.html', {
+const Window = await Gluon.open('index.html', {
   windowSize: [700, 500],
 });
 

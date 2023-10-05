@@ -2,7 +2,7 @@
   "name": "labydownloader",
   "version": "1.0.0",
   "description": "",
-  "main": "ui.js",
+  "main": "index.js",
   "type": "module",
   "dependencies": {
     "@gluon-framework/gluon": "^0.14.0",
