@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="./style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <link rel="icon" href="./logo.png">
+    <link rel="icon" type="image/x-icon" href="./logo.png">
     <title>Meow :3</title>
 </head>
-<body>
-    <button id="rofl" onclick="Gluon.ipc['download']('araara')" type="submit">
-        <label>
-            Press me!
-        </label>
-    </button>
-
-    <h1> Test: <code id="value"></code>
-
-    <script>
-    async function kek() {
-        Gluon.ipc.send('get good2')
-        Gluon.ipc['download']("araara")
-        value.textContent = await Gluon.ipc.send('get good');
-    }
-
-
-        (async () => {
-            await new Promise(res => {
-            const check = () => {
-          if (!window.Gluon) return setTimeout(check, 100);
-             res();
-            };
-            check();
-            });
-    })();
-    </script>
+<body onload="prepareLabyVersions()">
+    <div class="container-rolf" onload="prepareLabyVersions()">
+        <div id="labyChannelSelector" style="align-self: flex-start;">
+        </div>
+        <div id="selectionContainer" style="align-self: flex-end;">
+        </div>
+        <div id="InputContainer">
+            <span id="InputText">LabyMod Path</span>
+            <input type="text" id="InputBox"  class="form-control align-items-center" id="labymodPath" aria-describedby="labymodPath">
+        </div>
+        <input type="button" onclick="prepareLabyVersions()">
+        <div id="spacer"></div>
+        <div id="spacer"></div>
+        <div id="spacer"></div>
+        <div id="LogContainer">
+            <span id="">Output</span>
+            <div id="eew" class="logBox">TEts</div>
+        </div>
+    </div>
+    <script src="./code.js"></script>
 </body>
 </html>
