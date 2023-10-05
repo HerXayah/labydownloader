@@ -1,14 +1,9 @@
 # LabyDownloader
 Download a LabyMod-4 Jar to MultiMC/PolyMC or any directory to your PC :3
 
-![](Files/k8KJLClAlH.gif)
-
-## Requirements
-- Make sure you have [nodejs](https://nodejs.org/) installed.
+![](Files/k8KJLClAlH.gif
 
 ## Usage
 
-1. Create a folder where you place all the downloaded files
-2. Open CMD inside the folder
-3. Enter `npm i`
-4. After it finished installing, enter `node index.js`
+1. Unzip from Downloads into a Folder
+2. Run the bat file
