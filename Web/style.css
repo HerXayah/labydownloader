@@ -18,10 +18,28 @@ body {
 
 #selectionContainer {
     display: none;
+    column-gap: 10px;
+    row-gap: 2px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%/3, max(64px, 100%/5)), 1fr));
 }
 
 #labyChannelSelector {
-    display: block;
+    display: grid;
+    column-gap: 10px;
+    row-gap: 2px;
+    justify-content: space-evenly;
+}
+
+#gridcontainer {
+    column-gap: 10px;
+    row-gap: 2px;
+    background-color: rgba(13, 14, 13, 0.623);
+    width: 100%;
+    padding: 10px;
+    display: table;
+    flex-wrap: wrap;
+    justify-items: stretch;
+    border-radius: 1rem;
 }
 
 .container-rolf{
@@ -29,6 +47,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: block;
 }
 
 .logBox {
@@ -38,5 +57,5 @@ body {
 
 #spacer {
     width: 100%;
-    height: 1em;
+    height: 1rem;
 }

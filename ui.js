@@ -17,7 +17,7 @@ Window.ipc.determineVersions = async (channel) => {
     Window.ipc.store.config.selectedVersion = channel;
     Window.ipc.store.config.labyVersions = await downloadSpecificMC(channel).then((result) => {
         for (let i = 0; i < result.minecraftVersions.length; i++) {
-            arr.push("'" + result.minecraftVersions[i].version + "'");
+            arr.push(result.minecraftVersions[i].version);
         }
     });
     Window.ipc.store.config.labyVersions = arr;
@@ -28,6 +28,7 @@ Window.ipc.getLabyBuild = () => {
 }
 
 Window.ipc.getMCBuild = () => {
+    console.log(Window.ipc.store.config.labyVersions);
     return Window.ipc.store.config.labyVersions;
 }
 
@@ -42,9 +43,14 @@ Window.ipc.download = (path) => {
 };
 
 Window.ipc.on('populate', (event, arg) => {
-    console.log("Populating");
     Window.ipc.store.config.labyBuild = downloadLabyVersions();
-    console.log(Window.ipc.store.config.labyBuild);
+    return "Succies";
+});
+
+Window.ipc.on('populateMC', (event, arg) => {
+    console.log(arr + " bvefore");
+    Window.ipc.store.config.labyVersions = arr;
+    console.log(arr + " after");
     return "Succies";
 });
 
