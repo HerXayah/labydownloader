@@ -6,4 +6,4 @@ Download a LabyMod-4 Jar to MultiMC/PolyMC or any directory to your PC :3
 ## Usage
 
 1. Unzip from Downloads into a Folder
-2. Run the bat file
+2. Run the .cmd file
