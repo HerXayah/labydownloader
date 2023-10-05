@@ -1,7 +1,7 @@
 # LabyDownloader
 Download a LabyMod-4 Jar to MultiMC/PolyMC or any directory to your PC :3
 
-![](Files/pwsh_h5bq3tfk8t.gif)
+![](Files/k8KJLClAlH.gif)
 
 ## Requirements
 - Make sure you have [nodejs](https://nodejs.org/) installed.
