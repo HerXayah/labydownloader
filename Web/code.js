@@ -1,33 +1,46 @@
-async function kek() {
-  Gluon.ipc['download']('araara');
-  value.textContent = await Gluon.ipc.send('get good');
+async function log(message) {
+  Gluon.ipc['updateLog'](message);
+  Gluon.ipc['getLog']().then((result) => {
+    display_log.textContent = result;
+  });
+}
+
+async function updateLogEverySecond() {
+  setInterval(async () => {
+    Gluon.ipc['getLog']().then((result) => {
+      display_log.textContent = result;
+    });
+  }, 1000);
 }
 
 async function submitLabyVersion() {
-  let selection = document.getElementsByName('LabyVersion');
-  for (i = 0; i < selection.length; i++) {
-    if (selection[i].checked) {
-      await Gluon.ipc['determineVersions'](selection[i].value);
-      console.log(selection[i].value);
-      document
-        .getElementById('submitButton')
-        .setAttribute('onclick', 'submitVersion()');
-      prepareMCVersions();
-    }
-  }
+  const selection = document.querySelectorAll('input[name="LabyVersion"]:checked');
+  if (selection.length === 0) return;
+
+  const selectedValue = selection[0].value;
+  await Gluon.ipc['determineVersions'](selectedValue);
+  document.getElementById('submitButton').setAttribute('onclick', 'submitVersion()');
+  prepareMCVersions();
+  log('Select a Minecraft Version');
 }
 
 async function submitVersion() {
-  let selection = document.getElementsByName('mcVersion');
-  for (i = 0; i < selection.length; i++) {
-    if (selection[i].checked) {
-      console.log(selection[i].value);
-    }
-  }
+  const selection = document.querySelectorAll('input[name="mcVersion"]:checked');
+  if (selection.length === 0) return;
+
+  const inputValue = document.getElementById('InputBox').value;
+  if (inputValue === '') return;
+
+  const selectedValue = selection[0].value;
+  await Gluon.ipc['download'](inputValue, selectedValue);
+  log('Downloading...');
+  document.getElementById('submitButton').setAttribute('disabled', 'true');
 }
 
 function prepareLabyVersions() {
   Gluon.ipc.send('populate');
+
+  log('Fetching LabyMod Versions...');
 
   // Get the selectionContainer element
   var selectionContainer = document.getElementById('labyChannelSelector');
@@ -79,6 +92,9 @@ function prepareLabyVersions() {
 
 function prepareMCVersions() {
   // Get the selectionContainer element
+
+  log('Fetching Minecraft Versions...');
+
   var selectionContainer = document.getElementById('selectionContainer');
 
   // Initialize an empty versionData array
@@ -138,3 +154,5 @@ function prepareMCVersions() {
     check();
   });
 })();
+
+updateLogEverySecond();

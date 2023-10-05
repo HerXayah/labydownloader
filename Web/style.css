@@ -1,61 +1,70 @@
 body {
-    background-color: #494949;
-    overflow: auto;
-    overflow-x: hidden;
-    padding: 1em;
-    height: auto;
-    margin: 0;
+  background-color: #494949;
+  overflow: auto;
+  overflow-x: hidden;
+  padding: 1em;
+  height: auto;
+  margin: 0;
 }
 
 * {
-    color: white;
+  color: white;
 }
 
 #InputBox {
-    max-width: 20rem;
-    text-align: center;
+  max-width: 20rem;
+  text-align: center;
 }
 
 #selectionContainer {
-    display: none;
-    column-gap: 10px;
-    row-gap: 2px;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%/3, max(64px, 100%/5)), 1fr));
+  display: none;
+  column-gap: 10px;
+  row-gap: 2px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%/3, max(64px, 100%/5)), 1fr)
+  );
 }
 
 #labyChannelSelector {
-    display: grid;
-    column-gap: 10px;
-    row-gap: 2px;
-    justify-content: space-evenly;
+  display: grid;
+  column-gap: 10px;
+  row-gap: 2px;
+  justify-content: space-evenly;
 }
 
 #gridcontainer {
-    column-gap: 10px;
-    row-gap: 2px;
-    background-color: rgba(13, 14, 13, 0.623);
-    width: 100%;
-    padding: 10px;
-    display: table;
-    flex-wrap: wrap;
-    justify-items: stretch;
-    border-radius: 1rem;
+  column-gap: 10px;
+  row-gap: 2px;
+  background-color: rgba(13, 14, 13, 0.623);
+  width: 100%;
+  padding: 10px;
+  display: table;
+  flex-wrap: wrap;
+  justify-items: stretch;
+  border-radius: 1rem;
 }
 
-.container-rolf{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
+.container-rolf {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
 }
 
 .logBox {
-    background-color: black;
-    min-width: 40rem;
+  background-color: black;
+  min-width: 40rem;
 }
 
 #spacer {
-    width: 100%;
-    height: 1rem;
+  width: 100%;
+  height: 1rem;
+}
+
+.logBox {
+  background-color: black;
+  min-width: 40rem;
+  padding: 1rem;
 }
